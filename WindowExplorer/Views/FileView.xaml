@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WindowExplorer.Views.FileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowExplorer.Views"
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="610" d:DesignWidth="940">
+    <Grid>
+        <ListView Name="File" ItemsSource="{Binding Path=File}">
+            <ListView.Resources>
+                <Style TargetType="{x:Type ListViewItem}" />
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=File}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="30" Height="30" Source="/Images/file.png" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
